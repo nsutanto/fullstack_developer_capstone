@@ -37,14 +37,12 @@ class CarModel(models.Model):
     CAR_TYPES = [
         ('SEDAN', 'Sedan'),
         ('SUV', 'SUV'),
-        ('WAGON', 'Wagon'), # Add more choices as required
-    ]
+        ('WAGON', 'Wagon')]
     type = models.CharField(max_length=10, choices=CAR_TYPES, default='SUV')
     year = models.IntegerField(default=2023,
         validators=[
             MaxValueValidator(2023),
-            MinValueValidator(2015)
-        ])
+            MinValueValidator(2015)])
     # Other fields as needed
 
     def __str__(self):
